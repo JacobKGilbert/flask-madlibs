@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Madlibs</h1>
+  <form action="/story">
+    
+    {% for word_type in story.prompts %}
+      <label for={{word_type}}>{{word_type}}</label>
+      <input type="text" name={{word_type}} id={{word_type}}>
+    {% endfor %}
+    
+    <button type="submit">Get Story</button>
+  </form>
+{% endblock %}
